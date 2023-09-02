@@ -8,27 +8,11 @@ import routes from './routes';
 const { REACT_APP_ENV = 'dev' } = process.env;
 
 export default defineConfig({
-  /**
-   * @name 开启 hash 模式
-   * @description 让 build 之后的产物包含 hash 后缀。通常用于增量发布和避免浏览器加载缓存。
-   * @doc https://umijs.org/docs/api/config#hash
-   */
+  title: 'CMS内容管理系统',
   hash: true,
-
-  /**
-   * @name 兼容性设置
-   * @description 设置 ie11 不一定完美兼容，需要检查自己使用的所有依赖
-   * @doc https://umijs.org/docs/api/config#targets
-   */
-  // targets: {
-  //   ie: 11,
-  // },
-  /**
-   * @name 路由的配置，不在路由中引入的文件不会编译
-   * @description 只支持 path，component，routes，redirect，wrappers，title 的配置
-   * @doc https://umijs.org/docs/guides/routes
-   */
-  // umi routes: https://umijs.org/docs/routing
+  targets: {
+    ie: 11,
+  },
   routes,
   /**
    * @name 主题的配置
@@ -96,7 +80,7 @@ export default defineConfig({
    */
   locale: {
     // default zh-CN
-    default: 'zh-CN',
+    default: 'en-US',
     antd: true,
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
